@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatório e Média Aritmética</title>
+</head>
+<body>
+    <h1>Leitura de Valores Numéricos</h1>
+
+    <div id="inputs"></div>
+    <button onclick="calcular()">Calcular Somatório e Média</button>
+    
+    <div id="resultado"></div>
+
+    <script>
+        // Cria 10 campos de entrada
+        for (let i = 0; i < 10; i++) {
+            document.getElementById('inputs').innerHTML += `<label for="valor${i}">Valor ${i + 1}:</label>
+            <input type="number" id="valor${i}" placeholder="Digite um valor"><br>`;
+        }
+
+        function calcular() {
+            let somatorio = 0;
+            const totalValores = 10;
+
+            for (let i = 0; i < totalValores; i++) {
+                const valor = parseFloat(document.getElementById(`valor${i}`).value);
+                if (!isNaN(valor)) {
+                    somatorio += valor;
+                }
+            }
+
+            const media = somatorio / totalValores;
+
+            document.getElementById('resultado').innerText = `Somatório: ${somatorio.toFixed(2)}, Média Aritmética: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

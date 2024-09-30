@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor Valor</title>
+</head>
+<body>
+    <h1>Maior e Menor Valor</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function encontrarMaiorEMenor() {
+            let maior = null;
+            let menor = null;
+            let valor;
+
+            while (true) {
+                valor = parseInt(prompt("Digite um valor positivo inteiro (ou um valor negativo para sair):"));
+                if (valor < 0) break;
+
+                if (maior === null || valor > maior) {
+                    maior = valor;
+                }
+
+                if (menor === null || valor < menor) {
+                    menor = valor;
+                }
+            }
+
+            if (maior !== null && menor !== null) {
+                document.getElementById('resultado').innerText = `Maior valor: ${maior}\nMenor valor: ${menor}`;
+            } else {
+                document.getElementById('resultado').innerText = "Nenhum valor positivo foi informado.";
+            }
+        }
+
+        encontrarMaiorEMenor();
+    </script>
+</body>
+</html>

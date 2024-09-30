@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatoriais de Números Ímpares</title>
+</head>
+<body>
+    <h1>Fatorial dos Números Ímpares de 1 a 10</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularFatorial(num) {
+            let fatorial = 1;
+            for (let i = 1; i <= num; i++) {
+                fatorial *= i;
+            }
+            return fatorial;
+        }
+
+        function apresentarFatoriaisImpares() {
+            let resultado = '';
+
+            for (let i = 1; i <= 10; i += 2) {
+                let fatorial = calcularFatorial(i);
+                resultado += `Fatorial de ${i} = ${fatorial}<br>`;
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+
+        apresentarFatoriaisImpares();
+    </script>
+</body>
+</html>

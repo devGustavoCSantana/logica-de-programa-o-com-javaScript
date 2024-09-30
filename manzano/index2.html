@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Volume da Lata de Óleo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            background-color: #ff6161;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            background-color: #ffe44d;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Volume</h1>
+    <label for="raio">Raio da Lata (em cm):</label>
+    <input type="number" id="raio" placeholder="Digite o raio">
+    
+    <label for="altura">Altura da Lata (em cm):</label>
+    <input type="number" id="altura" placeholder="Digite a altura">
+    
+    <button onclick="calcularVolume()">Calcular Volume</button>
+
+    <div class="result" id="resultado"></div>
+
+    <script>
+        function calcularVolume() {
+            const raio = parseFloat(document.getElementById('raio').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+
+            if (isNaN(raio) || isNaN(altura) || raio <= 0 || altura <= 0) {
+                document.getElementById('resultado').innerText = 'Por favor, insira valores válidos.';
+                return;
+            }
+
+            const volume = Math.PI * Math.pow(raio, 2) * altura;
+            document.getElementById('resultado').innerText = `O volume da lata de óleo é ${volume.toFixed(2)} cm³.`;
+        }
+    </script>
+</body>
+</html>

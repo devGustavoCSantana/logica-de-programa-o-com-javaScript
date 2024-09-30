@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentual de Votos</title>
+</head>
+<body>
+    <h1>Cálculo de Percentuais de Votos</h1>
+    <label for="totalEleitores">Total de Eleitores:</label>
+    <input type="number" id="totalEleitores" />
+    <br>
+    <label for="votosBrancos">Votos Brancos:</label>
+    <input type="number" id="votosBrancos" />
+    <br>
+    <label for="votosNulos">Votos Nulos:</label>
+    <input type="number" id="votosNulos" />
+    <br>
+    <label for="votosValidos">Votos Válidos:</label>
+    <input type="number" id="votosValidos" />
+    <br>
+    <button onclick="calcularPercentuais()">Calcular Percentuais</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPercentuais() {
+            const total = parseInt(document.getElementById("totalEleitores").value);
+            const brancos = parseInt(document.getElementById("votosBrancos").value);
+            const nulos = parseInt(document.getElementById("votosNulos").value);
+            const validos = parseInt(document.getElementById("votosValidos").value);
+
+            const percentualBrancos = (brancos / total * 100).toFixed(2);
+            const percentualNulos = (nulos / total * 100).toFixed(2);
+            const percentualValidos = (validos / total * 100).toFixed(2);
+
+            document.getElementById("resultado").innerText = `Votos Brancos: ${percentualBrancos}%\nVotos Nulos: ${percentualNulos}%\nVotos Válidos: ${percentualValidos}%`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Combustível na Viagem</title>
+ 
+</head>
+<body>
+    <h1>Cálculo de Combustível</h1>
+    <label for="tempo">Tempo da Viagem (em horas):</label>
+    <input type="number" id="tempo" placeholder="Digite o tempo (horas)" step="0.1">
+    
+    <label for="velocidade">Velocidade Média (em km/h):</label>
+    <input type="number" id="velocidade" placeholder="Digite a velocidade (km/h)" step="0.1">
+    
+    <button onclick="calcularCombustivel()">Calcular</button>
+
+    <div class="result" id="resultado"></div>
+
+    <script>
+        function calcularCombustivel() {
+            const tempo = parseFloat(document.getElementById('tempo').value);
+            const velocidade = parseFloat(document.getElementById('velocidade').value);
+
+            if (isNaN(tempo) || isNaN(velocidade) || tempo <= 0 || velocidade <= 0) {
+                document.getElementById('resultado').innerText = 'Por favor, insira valores válidos.';
+                return;
+            }
+
+            const distancia = tempo * velocidade;
+            const litrosUsados = distancia / 12;
+
+            document.getElementById('resultado').innerText = `
+                Velocidade Média: ${velocidade} km/h
+                Tempo da Viagem: ${tempo} horas
+                Distância Percorrida: ${distancia.toFixed(2)} km
+                Litros de Combustível Usados: ${litrosUsados.toFixed(2)} litros
+            `;
+        }
+    </script>
+</body>
+</html>

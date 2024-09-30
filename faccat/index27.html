@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Partida</title>
+</head>
+<body>
+    <h1>Resultado da Partida de Futebol</h1>
+    <label for="time1">Nome do Time 1:</label>
+    <input type="text" id="time1" />
+    <br>
+    <label for="golsTime1">Gols do Time 1:</label>
+    <input type="number" id="golsTime1" />
+    <br>
+    <label for="time2">Nome do Time 2:</label>
+    <input type="text" id="time2" />
+    <br>
+    <label for="golsTime2">Gols do Time 2:</label>
+    <input type="number" id="golsTime2" />
+    <br>
+    <button onclick="determinarVencedor()">Verificar Vencedor</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function determinarVencedor() {
+            const time1 = document.getElementById("time1").value;
+            const golsTime1 = parseInt(document.getElementById("golsTime1").value);
+            const time2 = document.getElementById("time2").value;
+            const golsTime2 = parseInt(document.getElementById("golsTime2").value);
+
+            let resultado;
+            if (golsTime1 > golsTime2) {
+                resultado = `Vencedor: ${time1}`;
+            } else if (golsTime2 > golsTime1) {
+                resultado = `Vencedor: ${time2}`;
+            } else {
+                resultado = "EMPATE";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>

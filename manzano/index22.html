@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Área Total da Residência</title>
+</head>
+<body>
+    <h1>Cálculo da Área Total da Residência</h1>
+
+    <script>
+        let totalArea = 0;
+
+        function calcularArea() {
+            let continuar = "SIM"; 
+
+            while (continuar.toUpperCase() === "SIM") {
+                const nome = prompt("Digite o nome do cômodo:");
+                const largura = parseFloat(prompt("Digite a largura do cômodo (em metros):"));
+                const comprimento = parseFloat(prompt("Digite o comprimento do cômodo (em metros):"));
+
+                if (!isNaN(largura) && !isNaN(comprimento) && largura > 0 && comprimento > 0) {
+                    const area = largura * comprimento;
+                    totalArea += area;
+
+                    alert(`A área do cômodo "${nome}" é: ${area.toFixed(2)} m²`);
+                } else {
+                    alert("Por favor, insira valores válidos para largura e comprimento.");
+                }
+
+                continuar = prompt("Deseja calcular outro cômodo? (SIM/NAO)");
+            }
+
+            alert(`Área total acumulada da residência: ${totalArea.toFixed(2)} m²`);
+        }
+
+
+        calcularArea();
+    </script>
+</body>
+</html>
+

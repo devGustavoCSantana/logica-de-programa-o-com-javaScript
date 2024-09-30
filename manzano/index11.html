@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma dos Quadrados</title>
+</head>
+<body>
+    <h1>Cálculo da Soma dos Quadrados</h1>
+    
+    <label for="numA">Valor A:</label>
+    <input type="number" id="numA" placeholder="Digite o valor de A">
+    
+    <label for="numB">Valor B:</label>
+    <input type="number" id="numB" placeholder="Digite o valor de B">
+    
+    <label for="numC">Valor C:</label>
+    <input type="number" id="numC" placeholder="Digite o valor de C">
+    
+    <button onclick="calcularSoma()">Calcular Soma dos Quadrados</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularSoma() {
+            const A = parseFloat(document.getElementById('numA').value);
+            const B = parseFloat(document.getElementById('numB').value);
+            const C = parseFloat(document.getElementById('numC').value);
+
+            if (isNaN(A) || isNaN(B) || isNaN(C)) {
+                document.getElementById('resultado').innerText = 'Por favor, insira valores válidos.';
+                return;
+            }
+
+            const somaQuadrados = Math.pow(A, 2) + Math.pow(B, 2) + Math.pow(C, 2);
+            document.getElementById('resultado').innerText = `A soma dos quadrados é: ${somaQuadrados}.`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Expressões Lógicas</title>
+</head>
+<body>
+    <h1>Avaliação de Expressões Lógicas</h1>
+    <script>
+      
+        const A = true;  
+        const B = true;  
+        const C = false; 
+
+      
+        const resultadoA = (A && B) || (A !== B);
+        
+      
+        const resultadoB = (A || B) && (A && C);
+        
+        
+        const resultadoC = (A || (C && B)) !== (A && !B);
+
+        console.log(`Resultado da expressão a: ${resultadoA}`); 
+        console.log(`Resultado da expressão b: ${resultadoB}`);
+        console.log(`Resultado da expressão c: ${resultadoC}`); 
+    </script>
+</body>
+</html>

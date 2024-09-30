@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Série de Fibonacci</title>
+</head>
+<body>
+    <h1>Série de Fibonacci até o 15º Termo</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularFibonacci() {
+            let fibo = [1, 1];
+            for (let i = 2; i < 15; i++) {
+                fibo[i] = fibo[i - 1] + fibo[i - 2];
+            }
+
+            let resultado = fibo.join(", ");
+            document.getElementById('resultado').innerText = `A série de Fibonacci até o 15º termo é: ${resultado}`;
+        }
+
+        calcularFibonacci();
+    </script>
+</body>
+</html>

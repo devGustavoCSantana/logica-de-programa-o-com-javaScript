@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duração do Jogo de Xadrez</title>
+</head>
+<body>
+    <h1>Cálculo da Duração do Jogo de Xadrez</h1>
+    <label for="horaInicio">Hora de Início:</label>
+    <input type="number" id="horaInicio" min="0" max="23" />
+    <br>
+    <label for="horaFim">Hora de Fim:</label>
+    <input type="number" id="horaFim" min="0" max="23" />
+    <br>
+    <button onclick="calcularDuracao()">Calcular Duração</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDuracao() {
+            const horaInicio = parseInt(document.getElementById("horaInicio").value);
+            const horaFim = parseInt(document.getElementById("horaFim").value);
+
+            let duracao;
+            if (horaFim >= horaInicio) {
+                duracao = horaFim - horaInicio;
+            } else {
+                duracao = (24 - horaInicio) + horaFim;
+            }
+
+            document.getElementById("resultado").innerText = `Duração do jogo: ${duracao} hora(s).`;
+        }
+    </script>
+</body>
+</html>

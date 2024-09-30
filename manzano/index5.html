@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de Valores</title>
+</head>
+<body>
+    <h1>Troca de Valores</h1>
+    
+    <label for="valorA">Valor de A:</label>
+    <input type="text" id="valorA" placeholder="Digite o valor de A">
+    
+    <label for="valorB">Valor de B:</label>
+    <input type="text" id="valorB" placeholder="Digite o valor de B">
+    
+    <button onclick="trocarValores()">Trocar Valores</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function trocarValores() {
+            const valorA = document.getElementById('valorA').value;
+            const valorB = document.getElementById('valorB').value;
+
+            // Troca os valores
+            document.getElementById('valorA').value = valorB;
+            document.getElementById('valorB').value = valorA;
+
+            // Exibe o resultado
+            document.getElementById('resultado').innerText = `Valor de A: ${valorB}, Valor de B: ${valorA}`;
+        }
+    </script>
+</body>
+</html>

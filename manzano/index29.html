@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura de Valores</title>
+</head>
+<body>
+    <h1>Leitura de Valores Numéricos</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function lerValores() {
+            let somatorio = 0;
+            let contador = 0;
+            let valor;
+
+            while (true) {
+                valor = parseFloat(prompt("Digite um valor positivo (ou um valor negativo para sair):"));
+                if (valor < 0) break;
+                somatorio += valor;
+                contador++;
+            }
+
+            let media = contador > 0 ? somatorio / contador : 0;
+            document.getElementById('resultado').innerText = `Total: ${somatorio}\nMédia: ${media}\nTotal de valores lidos: ${contador}`;
+        }
+
+        lerValores();
+    </script>
+</body>
+</html>

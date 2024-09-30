@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Volume da Caixa Retangular</title>
+</head>
+<body>
+    <h1>Cálculo do Volume da Caixa Retangular</h1>
+    
+    <label for="comprimento">Comprimento (em cm):</label>
+    <input type="number" id="comprimento" placeholder="Digite o comprimento" step="0.01">
+    
+    <label for="largura">Largura (em cm):</label>
+    <input type="number" id="largura" placeholder="Digite a largura" step="0.01">
+    
+    <label for="altura">Altura (em cm):</label>
+    <input type="number" id="altura" placeholder="Digite a altura" step="0.01">
+    
+    <button onclick="calcularVolume()">Calcular Volume</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularVolume() {
+            const comprimento = parseFloat(document.getElementById('comprimento').value);
+            const largura = parseFloat(document.getElementById('largura').value);
+            const altura = parseFloat(document.getElementById('altura').value);
+
+            if (isNaN(comprimento) || isNaN(largura) || isNaN(altura) || comprimento <= 0 || largura <= 0 || altura <= 0) {
+                document.getElementById('resultado').innerText = 'Por favor, insira valores válidos.';
+                return;
+            }
+
+            const volume = comprimento * largura * altura;
+            document.getElementById('resultado').innerText = `O volume da caixa retangular é ${volume.toFixed(2)} cm³.`;
+        }
+    </script>
+</body>
+</html>

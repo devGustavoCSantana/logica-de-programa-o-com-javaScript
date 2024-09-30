@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Adição e Multiplicação</title>
+</head>
+<body>
+    <h1>Cálculo de Adição e Multiplicação</h1>
+    
+    <label for="numA">Número A:</label>
+    <input type="number" id="numA">
+    
+    <label for="numB">Número B:</label>
+    <input type="number" id="numB">
+    
+    <label for="numC">Número C:</label>
+    <input type="number" id="numC">
+    
+    <label for="numD">Número D:</label>
+    <input type="number" id="numD">
+    
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            const A = parseInt(document.getElementById('numA').value);
+            const B = parseInt(document.getElementById('numB').value);
+            const C = parseInt(document.getElementById('numC').value);
+            const D = parseInt(document.getElementById('numD').value);
+
+            // Adições
+            const somaAB = A + B;
+            const somaAC = A + C;
+            const somaAD = A + D;
+            const somaBC = B + C;
+            const somaBD = B + D;
+            const somaCD = C + D;
+
+            // Multiplicações
+            const produtoAB = A * B;
+            const produtoAC = A * C;
+            const produtoAD = A * D;
+            const produtoBC = B * C;
+            const produtoBD = B * D;
+            const produtoCD = C * D;
+
+            // Exibe os resultados
+            document.getElementById('resultado').innerHTML = `
+                <h2>Resultados:</h2>
+                <p>Soma A + B: ${somaAB}</p>
+                <p>Soma A + C: ${somaAC}</p>
+                <p>Soma A + D: ${somaAD}</p>
+                <p>Soma B + C: ${somaBC}</p>
+                <p>Soma B + D: ${somaBD}</p>
+                <p>Soma C + D: ${somaCD}</p>
+                <p>Produto A * B: ${produtoAB}</p>
+                <p>Produto A * C: ${produtoAC}</p>
+                <p>Produto A * D: ${produtoAD}</p>
+                <p>Produto B * C: ${produtoBC}</p>
+                <p>Produto B * D: ${produtoBD}</p>
+                <p>Produto C * D: ${produtoCD}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

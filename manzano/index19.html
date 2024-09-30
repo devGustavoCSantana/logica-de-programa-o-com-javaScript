@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Série de Fibonacci</title>
+</head>
+<body>
+    <h1>Série de Fibonacci até o 15º Termo</h1>
+    
+    <button onclick="mostrarFibonacci()">Mostrar Série</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarFibonacci() {
+            const termos = 15;
+            let fibonacci = [1, 1];
+
+            // Calcula a série de Fibonacci
+            for (let i = 2; i < termos; i++) {
+                fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+            }
+
+            // Monta o resultado como uma string
+            const resultado = fibonacci.join(', ');
+
+            document.getElementById('resultado').innerText = `Série de Fibonacci: ${resultado}`;
+        }
+    </script>
+</body>
+</html>

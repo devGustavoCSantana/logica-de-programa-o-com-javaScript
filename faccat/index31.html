@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda de Frutas</title>
+</head>
+<body>
+    <h1>Cálculo do Valor de Frutas</h1>
+    <label for="kgMorangos">Quantidade de Morangos (Kg):</label>
+    <input type="number" id="kgMorangos" />
+    <br>
+    <label for="kgMacas">Quantidade de Maçãs (Kg):</label>
+    <input type="number" id="kgMacas" />
+    <br>
+    <button onclick="calcularValor()">Calcular Valor</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularValor() {
+            const kgMorangos = parseFloat(document.getElementById("kgMorangos").value);
+            const kgMacas = parseFloat(document.getElementById("kgMacas").value);
+
+            const precoMorango = kgMorangos <= 5 ? 2.50 : 2.20;
+            const precoMaca = kgMacas <= 5 ? 1.80 : 1.50;
+
+            const totalMorangos = kgMorangos * precoMorango;
+            const totalMacas = kgMacas * precoMaca;
+
+            let totalCompra = totalMorangos + totalMacas;
+
+            if (kgMorangos + kgMacas > 8 || totalCompra > 25) {
+                totalCompra *= 0.90; // Aplica 10% de desconto
+            }
+
+            document.getElementById("resultado").innerText = `Valor a ser pago: R$ ${totalCompra.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

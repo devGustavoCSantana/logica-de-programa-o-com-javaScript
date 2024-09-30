@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Potência</title>
+</head>
+<body>
+    <h1>Cálculo de Potência</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularPotencia() {
+            let base = parseFloat(prompt("Digite a base (B):"));
+            let expoente = parseInt(prompt("Digite o expoente (E):"));
+
+            if (expoente < 0) {
+                alert("Expoente negativo não suportado neste programa.");
+                return;
+            }
+
+            let potencia = 1;
+
+            for (let i = 0; i < expoente; i++) {
+                potencia *= base;
+            }
+
+            document.getElementById('resultado').innerText = `${base} elevado a ${expoente} é igual a ${potencia}`;
+        }
+
+        calcularPotencia();
+    </script>
+</body>
+</html>

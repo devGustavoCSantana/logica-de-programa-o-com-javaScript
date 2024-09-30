@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão Celsius para Fahrenheit</title>
+</head>
+<body>
+    <h1>Conversão de Graus Celsius para Fahrenheit</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function converterCelsiusParaFahrenheit() {
+            let resultado = '';
+
+            for (let celsius = 10; celsius <= 100; celsius += 10) {
+                let fahrenheit = (9 * celsius + 160) / 5;
+                resultado += `${celsius} °C = ${fahrenheit.toFixed(2)} °F<br>`;
+            }
+
+            document.getElementById('resultado').innerHTML = resultado;
+        }
+
+        converterCelsiusParaFahrenheit();
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Estoque</title>
+</head>
+<body>
+    <h1>Verificação de Estoque de Produto</h1>
+    <label for="quantidadeAtual">Quantidade Atual em Estoque:</label>
+    <input type="number" id="quantidadeAtual" />
+    <br>
+    <label for="quantidadeMaxima">Quantidade Máxima em Estoque:</label>
+    <input type="number" id="quantidadeMaxima" />
+    <br>
+    <label for="quantidadeMinima">Quantidade Mínima em Estoque:</label>
+    <input type="number" id="quantidadeMinima" />
+    <br>
+    <button onclick="verificarEstoque()">Verificar Estoque</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarEstoque() {
+            const quantidadeAtual = parseInt(document.getElementById("quantidadeAtual").value);
+            const quantidadeMaxima = parseInt(document.getElementById("quantidadeMaxima").value);
+            const quantidadeMinima = parseInt(document.getElementById("quantidadeMinima").value);
+
+            const quantidadeMedia = (quantidadeMaxima + quantidadeMinima) / 2;
+            const mensagem = quantidadeAtual >= quantidadeMedia ? "Não efetuar compra" : "Efetuar compra";
+
+            document.getElementById("resultado").innerText = 
+                `Quantidade Média: ${quantidadeMedia.toFixed(2)}\n${mensagem}`;
+        }
+    </script>
+</body>
+</html>

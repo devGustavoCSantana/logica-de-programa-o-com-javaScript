@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Triângulos</title>
+</head>
+<body>
+    <h1>Teste de Triângulos</h1>
+    <button onclick="testarTriangulos()">Executar Teste</button>
+
+    <pre id="resultado"></pre>
+
+    <script>
+        function verificarTriangulo(a, b, c) {
+            let mens;
+
+            if (a < b + c && b < a + c && c < a + b) {
+                if (a === b && b === c) {
+                    mens = 'Triângulo Equilátero';
+                } else if (a === b || b === c || a === c) {
+                    mens = 'Triângulo Isósceles';
+                } else {
+                    mens = 'Triângulo Escaleno';
+                }
+            } else {
+                mens = 'Não é possível formar um triângulo';
+            }
+
+            return mens;
+        }
+
+        function testarTriangulos() {
+            const casos = [
+                { a: 1, b: 2, c: 3 },
+                { a: 3, b: 4, c: 5 },
+                { a: 2, b: 2, c: 4 },
+                { a: 4, b: 4, c: 4 },
+                { a: 5, b: 3, c: 3 },
+            ];
+
+            let resultado = '';
+
+            casos.forEach(({ a, b, c }) => {
+                const mensagem = verificarTriangulo(a, b, c);
+                resultado += `a: ${a}, b: ${b}, c: ${c} -> ${mensagem}\n`;
+            });
+
+            document.getElementById('resultado').innerText = resultado;
+        }
+    </script>
+</body>
+</html>

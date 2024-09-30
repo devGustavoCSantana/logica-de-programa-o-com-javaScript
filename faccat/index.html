@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antecessor</title>
+</head>
+<body>
+    <h1>Calcular Antecessor</h1>
+    <label for="valor">Digite um valor:</label>
+    <input type="number" id="valor" />
+    <button onclick="calcularAntecessor()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularAntecessor() {
+            const valor = document.getElementById("valor").value;
+            const antecessor = valor - 1;
+            document.getElementById("resultado").innerText = `O antecessor de ${valor} é ${antecessor}.`;
+        }
+    </script>
+</body>
+</html>

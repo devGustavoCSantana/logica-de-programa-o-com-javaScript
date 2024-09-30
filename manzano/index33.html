@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisão Inteira</title>
+</head>
+<body>
+    <h1>Divisão Inteira de Dois Números</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function dividirSemDivisor() {
+            let dividendo = parseInt(prompt("Digite o dividendo (número a ser dividido):"));
+            let divisor = parseInt(prompt("Digite o divisor (número pelo qual dividir):"));
+
+            if (divisor === 0) {
+                document.getElementById('resultado').innerText = "Erro: Divisão por zero não é permitida.";
+                return;
+            }
+
+            let quociente = 0;
+
+            while (dividendo >= divisor) {
+                dividendo -= divisor;
+                quociente++;
+            }
+
+            document.getElementById('resultado').innerText = `Resultado da divisão inteira: ${quociente}`;
+        }
+
+        dividirSemDivisor();
+    </script>
+</body>
+</html>

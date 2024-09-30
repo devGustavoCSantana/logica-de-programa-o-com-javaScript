@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Média</title>
+</head>
+<body>
+    <h1>Cálculo de Média das Avaliações</h1>
+    <button onclick="iniciarCalculo()">Calcular Média</button>
+    
+    <p id="resultado"></p>
+
+    <script>
+        function iniciarCalculo() {
+            let continuar;
+
+            do {
+                let nota1 = parseFloat(prompt("Insira a nota da 1ª avaliação (0 a 10):"));
+                while (nota1 < 0 || nota1 > 10) {
+                    alert("VALOR INVÁLIDO! A nota deve estar entre 0 e 10.");
+                    nota1 = parseFloat(prompt("Insira a nota da 1ª avaliação (0 a 10):"));
+                }
+
+                let nota2 = parseFloat(prompt("Insira a nota da 2ª avaliação (0 a 10):"));
+                while (nota2 < 0 || nota2 > 10) {
+                    alert("VALOR INVÁLIDO! A nota deve estar entre 0 e 10.");
+                    nota2 = parseFloat(prompt("Insira a nota da 2ª avaliação (0 a 10):"));
+                }
+
+                const media = (nota1 + nota2) / 2;
+                document.getElementById("resultado").innerText = `Média: ${media.toFixed(2)}`;
+
+                continuar = prompt("NOVO CÁLCULO (S/N)?").toUpperCase();
+            } while (continuar === 'S');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Valor</title>
+</head>
+<body>
+    <h1>Verificação de Valor</h1>
+    <label for="valor">Digite um valor:</label>
+    <input type="number" id="valor" />
+    <br>
+    <button onclick="verificarValor()">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarValor() {
+            const valor = parseFloat(document.getElementById("valor").value);
+            let mensagem;
+
+            if (valor > 0) {
+                mensagem = "O valor é positivo.";
+            } else if (valor < 0) {
+                mensagem = "O valor é negativo.";
+            } else {
+                mensagem = "O valor é zero.";
+            }
+
+            document.getElementById("resultado").innerText = mensagem;
+        }
+    </script>
+</body>
+</html>

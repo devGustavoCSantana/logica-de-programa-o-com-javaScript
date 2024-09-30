@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Saldo da Conta</title>
+</head>
+<body>
+    <h1>Cálculo do Saldo da Conta do Cliente</h1>
+    <label for="numeroConta">Número da Conta:</label>
+    <input type="text" id="numeroConta" />
+    <br>
+    <label for="saldo">Saldo:</label>
+    <input type="number" id="saldo" step="0.01" />
+    <br>
+    <label for="debito">Débito:</label>
+    <input type="number" id="debito" step="0.01" />
+    <br>
+    <label for="credito">Crédito:</label>
+    <input type="number" id="credito" step="0.01" />
+    <br>
+    <button onclick="calcularSaldo()">Calcular Saldo Atual</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSaldo() {
+            const numeroConta = document.getElementById("numeroConta").value;
+            const saldo = parseFloat(document.getElementById("saldo").value);
+            const debito = parseFloat(document.getElementById("debito").value);
+            const credito = parseFloat(document.getElementById("credito").value);
+
+            const saldoAtual = saldo - debito + credito;
+            const mensagem = saldoAtual >= 0 ? "Saldo Positivo" : "Saldo Negativo";
+
+            document.getElementById("resultado").innerText = 
+                `Número da Conta: ${numeroConta}\nSaldo Atual: R$ ${saldoAtual.toFixed(2)}\n${mensagem}`;
+        }
+    </script>
+</body>
+</html>

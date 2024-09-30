@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Potência</title>
+</head>
+<body>
+    <h1>Cálculo de Potência</h1>
+    
+    <label for="base">Digite a base (B):</label>
+    <input type="number" id="base" placeholder="Base">
+    
+    <label for="expoente">Digite o expoente (E):</label>
+    <input type="number" id="expoente" placeholder="Expoente">
+    
+    <button onclick="calcularPotencia()">Calcular Potência</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcularPotencia() {
+            const base = parseFloat(document.getElementById('base').value);
+            const expoente = parseInt(document.getElementById('expoente').value);
+
+            if (isNaN(base) || isNaN(expoente)) {
+                document.getElementById('resultado').innerText = 'Por favor, insira valores válidos.';
+                return;
+            }
+
+            let resultado = 1;
+
+            // Calcula a potência manualmente
+            for (let i = 0; i < Math.abs(expoente); i++) {
+                resultado *= base;
+            }
+
+            // Se o expoente for negativo, calcula o inverso
+            if (expoente < 0) {
+                resultado = 1 / resultado;
+            }
+
+            document.getElementById('resultado').innerText = `O resultado de ${base} elevado a ${expoente} é: ${resultado}.`;
+        }
+    </script>
+</body>
+</html>

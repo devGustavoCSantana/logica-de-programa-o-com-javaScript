@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatório de Grãos de Trigo</title>
+</head>
+<body>
+    <h1>Somatório de Grãos de Trigo em um Tabuleiro de Xadrez</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularSomaGraos() {
+            let totalGraos = 0; 
+            let graosNoQuadro = 1; 
+
+            for (let i = 1; i <= 64; i++) {
+                totalGraos += graosNoQuadro; 
+                graosNoQuadro *= 2; 
+            }
+
+           
+            document.getElementById('resultado').innerText = `Total de grãos de trigo no tabuleiro: ${totalGraos}`;
+        }
+
+       
+        calcularSomaGraos();
+    </script>
+</body>
+</html>

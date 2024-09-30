@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Prestação em Atraso</title>
+  
+</head>
+<body>
+    <h1>Cálculo de Prestação em Atraso</h1>
+    <label for="valor">Valor da Prestação:</label>
+    <input type="number" id="valor" placeholder="Digite o valor" step="0.01">
+    
+    <label for="taxa">Taxa de Juros (%):</label>
+    <input type="number" id="taxa" placeholder="Digite a taxa de juros" step="0.01">
+    
+    <label for="tempo">Tempo em Atraso (em dias):</label>
+    <input type="number" id="tempo" placeholder="Digite o tempo (dias)" step="1">
+    
+    <button onclick="calcularPrestacao()">Calcular Prestação</button>
+
+    <div class="result" id="resultado"></div>
+
+    <script>
+        function calcularPrestacao() {
+            const valor = parseFloat(document.getElementById('valor').value);
+            const taxa = parseFloat(document.getElementById('taxa').value);
+            const tempo = parseInt(document.getElementById('tempo').value);
+
+            if (isNaN(valor) || isNaN(taxa) || isNaN(tempo) || valor <= 0 || taxa < 0 || tempo < 0) {
+                document.getElementById('resultado').innerText = 'Por favor, insira valores válidos.';
+                return;
+            }
+
+            const prestacao = valor + (valor * (taxa / 100) * tempo);
+            document.getElementById('resultado').innerText = `O valor da prestação em atraso é R$ ${prestacao.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

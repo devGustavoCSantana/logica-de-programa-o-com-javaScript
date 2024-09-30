@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Custo das Maçãs</title>
+</head>
+<body>
+    <h1>Cálculo do Custo das Maçãs</h1>
+    <label for="numMacas">Número de Maçãs Compradas:</label>
+    <input type="number" id="numMacas" />
+    <br>
+    <button onclick="calcularCusto()">Calcular Custo Total</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularCusto() {
+            const numMacas = parseInt(document.getElementById("numMacas").value);
+            const precoPorMaca = numMacas < 12 ? 1.30 : 1.00;
+            const custoTotal = numMacas * precoPorMaca;
+            document.getElementById("resultado").innerText = `O custo total da compra é R$ ${custoTotal.toFixed(2)}.`;
+        }
+    </script>
+</body>
+</html>

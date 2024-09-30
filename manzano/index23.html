@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor Valor</title>
+</head>
+<body>
+    <h1>Leitura de Valores Inteiros</h1>
+
+    <script>
+        let maior = null;
+        let menor = null;
+
+        while (true) {
+            const valor = parseInt(prompt("Digite um valor positivo inteiro (ou um valor negativo para sair):"));
+
+            if (valor < 0) {
+                break;
+            }
+            if (maior === null || menor === null) {
+                maior = valor;
+                menor = valor;
+            } else {
+                // Atualiza maior e menor
+                if (valor > maior) {
+                    maior = valor;
+                }
+                if (valor < menor) {
+                    menor = valor;
+                }
+            }
+        }
+        if (maior !== null && menor !== null) {
+            alert(`Maior valor: ${maior}\nMenor valor: ${menor}`);
+        } else {
+            alert("Nenhum valor positivo foi informado.");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma e Média de Números Pares</title>
+</head>
+<body>
+    <h1>Soma e Média de Números Pares de 50 a 70</h1>
+    
+    <button onclick="calcular()">Calcular Soma e Média</button>
+
+    <div id="resultado"></div>
+
+    <script>
+        function calcular() {
+            let soma = 0;
+            let contagem = 0;
+
+            // Loop de 50 a 70
+            for (let i = 50; i <= 70; i++) {
+                if (i % 2 === 0) { // Verifica se o número é par
+                    soma += i;
+                    contagem++;
+                }
+            }
+
+            const media = contagem > 0 ? (soma / contagem) : 0;
+
+            document.getElementById('resultado').innerText = 
+                `Soma dos números pares: ${soma}\nMédia aritmética: ${media.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

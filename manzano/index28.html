@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somatório das Fatoriais</title>
+</head>
+<body>
+    <h1>Somatório das Fatoriais de 15 Valores</h1>
+    
+    <div id="resultado"></div>
+
+    <script>
+        function calcularFatorial(n) {
+            let fatorial = 1;
+            for (let i = 1; i <= n; i++) {
+                fatorial *= i;
+            }
+            return fatorial;
+        }
+
+        function lerValores() {
+            let somatorio = 0;
+
+            for (let i = 0; i < 15; i++) {
+                let valor = parseInt(prompt(`Digite o ${i + 1}º valor inteiro:`));
+                
+     
+                while (isNaN(valor) || valor < 0) {
+                    valor = parseInt(prompt(`Valor inválido! Digite o ${i + 1}º valor inteiro não negativo:`));
+                }
+
+         
+                somatorio += calcularFatorial(valor);
+            }
+
+            return somatorio;
+        }
+
+     
+        const resultado = lerValores();
+        document.getElementById('resultado').innerText = `Somatório das fatoriais: ${resultado}`;
+    </script>
+</body>
+</html>

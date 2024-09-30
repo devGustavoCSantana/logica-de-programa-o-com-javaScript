@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Salário com Horas Extras</title>
+</head>
+<body>
+    <h1>Cálculo do Salário Total do Funcionário</h1>
+    <label for="horasTrabalhadas">Número de Horas Trabalhadas no Mês:</label>
+    <input type="number" id="horasTrabalhadas" />
+    <br>
+    <label for="salarioPorHora">Salário por Hora:</label>
+    <input type="number" id="salarioPorHora" step="0.01" />
+    <br>
+    <button onclick="calcularSalario()">Calcular Salário Total</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularSalario() {
+            const horasTrabalhadas = parseInt(document.getElementById("horasTrabalhadas").value);
+            const salarioPorHora = parseFloat(document.getElementById("salarioPorHora").value);
+            const horasNormais = Math.min(horasTrabalhadas, 160);
+            const horasExtras = Math.max(0, horasTrabalhadas - 160);
+            const salarioTotal = (horasNormais * salarioPorHora) + (horasExtras * salarioPorHora * 1.5);
+            document.getElementById("resultado").innerText = `Salário Total: R$ ${salarioTotal.toFixed(2)}.`;
+        }
+    </script>
+</body>
+</html>
